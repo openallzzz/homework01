@@ -1,5 +1,7 @@
 package org.zzzzzz.validator;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
@@ -8,6 +10,9 @@ import org.zzzzzz.pojo.User;
 
 @Component
 public class UserValidator implements Validator {
+
+    private final static Log logger = LogFactory.getLog(UserValidator.class);
+
     @Override
     public boolean supports(Class<?> aClass) {
         return User.class.isAssignableFrom(aClass);
@@ -16,8 +21,8 @@ public class UserValidator implements Validator {
     @Override
     public void validate(Object o, Errors errors) {
         User user = (User) o;
-
         ValidationUtils.rejectIfEmpty(errors, "username", "user.username.required");
+
         if (user.getId().length() < 3 || user.getId().length() > 12) {
             errors.rejectValue("id", "id.invalid");
         }

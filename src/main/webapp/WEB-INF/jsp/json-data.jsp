@@ -1,18 +1,14 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 18028
-  Date: 2023/3/2
-  Time: 23:10
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
-    <title>json格式的信息</title>
+    <title>展示学生信息(JSON格式)</title>
 </head>
 <body>
-
- ${data}
+<center>
+    <h1>学生信息的JSON格式</h1>
+    ${data}
+</center>
 
 </body>
 </html>

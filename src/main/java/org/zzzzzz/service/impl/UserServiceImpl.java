@@ -6,10 +6,10 @@ import org.zzzzzz.service.UserService;
 
 import java.util.ArrayList;
 
+
 @Service
 public class UserServiceImpl implements UserService {
 
-    // 使用数组来模拟数据访问层
     private final ArrayList<User> userList = new ArrayList<>();
 
     @Override
